@@ -1,0 +1,31 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: auto;
+}
+table{
+    border-collapse: collapse;
+    margin: 25px 0; 
+    padding: 10px;
+    font-size: 1em; 
+    font-family: sans-serif;
+    min-width: 450px; 
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+table thead tr {
+    background-color: #980081; 
+    color: #ffffff; 
+    text-align: middle;
+    text-align: center;
+}
+table tr { 
+    border-bottom: 1px solid #dddddd; 
+    text-align: center;
+} 
+table tr:nth-of-type(even) {
+    background-color: #f3f3f3; 
+    text-align: center;
+} 
+

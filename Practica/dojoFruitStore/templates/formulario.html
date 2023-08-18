@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Formulario {% endblock %}
+
+{% block menu %}
+{% include 'menu.html' %}
+{% endblock %}
+
+{% block contenido %}
+<div class="col">
+    <form action="/proceso_formulario" method="POST">
+        <div class="row g-3 align-items-center">
+            <div class="col-1">
+                <label for="name" class="col-form-label mt-3">Name</label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="nombre" name="nombre" class="form-control mt-3">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center">
+            <div class="col-1">
+                <label for="email" class="col-form-label mt-3">Email</label>
+            </div>
+            <div class="col-4">
+                <input type="text" id="email" name="email" class="form-control mt-3">
+            </div>
+        </div>
+        <div class="row g-3 align-items-center">
+            <div class="col-1">
+            </div>
+            <div class="col-9">
+                <button type="submit" class="btn btn-primary mb-3 mt-3">Enviar</button>
+                <a href="/limpiar" class="btn btn-danger ms-1">Borrar</a>
+            </div>
+        </div>
+    </form>
+</div>
+<div class="col">
+    <h1>DATOS RECIBIDOS</h1>
+    {% if nombre %}
+    <p>Este es el nombre: {{nombre}}</p>
+    {% else %}
+    <p>Lamentablemente aún no ejecutas el formulario.</p>
+    {% endif %}
+
+    {% if email %}
+    <p>Este es el email: {{email}}</p>
+    {% endif %}
+</div>
+
+{% endblock %}

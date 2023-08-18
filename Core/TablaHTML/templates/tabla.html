@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Tablero {% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/estiloTablaHTML.css') }}">
+{% endblock %}
+
+{% block contenido %}
+
+
+
+<div class="container">
+    <table>
+        <thead>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Nombre Completo</th>
+        </thead>
+        <tbody>
+            {% for j in users %}
+            <tr>
+                <td>{{ j['first_name']}} </td>
+                <td>{{ j['last_name']}} </td>
+                <td>{{ j['first_name']}} {{ j['last_name']}} </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+
+
+{% endblock%}
