@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Tablero {% endblock %}
+
+{% block estilos %}
+<style>
+table tr td{
+    width: 50px;
+    height: 50px;
+}
+.color1{
+    background-color: red;
+}
+.color2{
+    background-color: black;
+}
+</style>
+{% endblock %}
+
+{% block contenido %}
+<table>
+    {%for i in range(x) %}
+    <tr>
+        {%for j in range(y) %}
+        <td class="color{{ (i+j)%2+1 }}"></td>
+    {% endfor %}
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

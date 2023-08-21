@@ -14,15 +14,10 @@ def index():
 @app.route('/checkout', methods=['POST'])         
 def checkout():
     items = int(request.form['strawberry']) + int(request.form['raspberry']) + int(request.form['apple'])
+    
+    print("Cobrando a", request.form['first_name']," ",request.form['last_name'], " por ", items, "frutas")
     print(request.form)
-    print(request.form['first_name'])
-    print(request.form['last_name'])
-    print(request.form['student_id'])
-    print(request.form['strawberry'])
-    print(request.form['raspberry'])
-    print(request.form['apple'])
 
-    #return redirect(f"/formulario/{request.form['nombre']}/{request.form['email']}")
     return render_template("checkout.html", items = items)
 
 @app.route('/fruits')         

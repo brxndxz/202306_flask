@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Result {% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block contenido %}
+
+<div class="main">
+    <h3>Submited Info:</h3>
+    <p>Name: {{session['name']}}</p>
+
+    <p>Comments: {{session['user_message']}}</p>
+</div>
+
+{% endblock%}
