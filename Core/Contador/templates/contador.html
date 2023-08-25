@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block titulo %} Contador {% endblock %}
+
+{% block estilos %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/estiloTablaHTML.css') }}">
+{% endblock %}
+
+{% block contenido %}
+
+<h1>Contador</h1>
+<p><label for="contador" class="contador"> {{session['username'}} vez</label></p>
+{% endblock%}
